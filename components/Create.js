@@ -67,7 +67,7 @@ class Create extends PureComponent {
                 <input id="recipients" value={recipients} onChange={(e) => this.handleInputChange(e)} placeholder="Recipient" required />
                 <input id="originator" value={originator} onChange={(e) => this.handleInputChange(e)} placeholder="Originator" required />
                 <textarea id="body" value={body} onChange={(e) => this.handleInputChange(e)} placeholder="Message"></textarea>
-                <div className="count">{body.length}/{Create.maxLength}, {Math.floor(body.length/160) + 1} SMS</div>
+                <div className="count">{body.length}/{Create.maxLength}, {!!body.length ? Math.floor(body.length/160) + 1 : 0} SMS</div>
                 <button type="submit" className="flex">
                     <MessageIcon />
                     Send SMS
