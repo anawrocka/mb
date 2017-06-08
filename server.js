@@ -3,14 +3,11 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const next = require('next')
-const router = express.Router()
 const bodyParser = require('body-parser')
 
 const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dev })
 const nextHandler = nextApp.getRequestHandler()
-
-const messages = []
 
 nextApp.prepare()
 .then(() => {
@@ -34,9 +31,6 @@ nextApp.prepare()
 
     io.emit('message', req.body)
   })
-
-  module.exports = router
-
 })
 
 .catch((ex) => {
