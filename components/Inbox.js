@@ -23,11 +23,13 @@ class Inbox extends PureComponent {
     }
 
     handleReceiveMessage = (message) => {
-        message.status = 'received'
+        message.status = 'delivered'
         message.direction = 'mo'
+
         this.setState({
-            messages: this.state.messages.concat(message)
+            messages: [message].concat(this.state.messages)
         })
+        return
     }
     
     render() {
