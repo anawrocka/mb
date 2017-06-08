@@ -1,0 +1,7 @@
+{
+  "name": "mb",
+  "alias": "mb-code-ex.now.sh",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

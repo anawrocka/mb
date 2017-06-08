@@ -13,7 +13,7 @@ class Inbox extends PureComponent {
     }
 
     componentDidMount() {
-        this.socket = io("http://localhost:3000")
+        this.socket = io()
         this.socket.on('message', this.handleReceiveMessage)
     }
 
