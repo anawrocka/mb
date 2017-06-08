@@ -3,9 +3,6 @@ import api from '../modules/api'
 import MessageIcon from 'react-icons/lib/fa/comment'
 import ReactNotify from 'react-notify'
 
-import io from 'socket.io-client'
-const socket = io("http://localhost:3000")
-
 class Create extends PureComponent {
 
     static emptyState = {
