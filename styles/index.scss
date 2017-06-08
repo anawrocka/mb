@@ -272,8 +272,8 @@ textarea {
   align-items: flex-start;
   align-content: flex-start;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: $l-space;
+  right: $l-space;
 }
  
 .notify-item {

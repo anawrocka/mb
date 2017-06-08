@@ -36,12 +36,16 @@ class Create extends PureComponent {
 
         api.post('/messages', params)
         .then((res) => {
-            this.setState(Create.emptyState)
-            this.refs.notificator.success("Success", "Message sent", 5000)
+            res.data.errors ?
+                 this.refs.notificator.error(
+                    "Error",
+                    "Unable to send message: " + res.data.errors[0].description,
+                    7000)
+            :
+                this.refs.notificator.success("Success", "Message sent", 7000)
+                this.setState(Create.emptyState)
         })
-        .catch((err) => {
-            this.refs.notificator.error("Error", "Unable to send message", 50000)
-        })
+        
         return false
     }
 
