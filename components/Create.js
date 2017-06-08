@@ -1,6 +1,7 @@
 import PureComponent from 'react-pure-render/component'
 import api from '../modules/api'
 import MessageIcon from 'react-icons/lib/fa/comment'
+import ReactNotify from 'react-notify'
 
 import io from 'socket.io-client'
 const socket = io("http://localhost:3000")
@@ -36,8 +37,13 @@ class Create extends PureComponent {
             recipients: [recipients]
         }
 
-        api.post('/messages', params).then((res) => {
+        api.post('/messages', params)
+        .then((res) => {
             this.setState(Create.emptyState)
+            this.refs.notificator.success("Success", "Message sent", 5000)
+        })
+        .catch((err) => {
+            this.refs.notificator.error("Error", "Unable to send message", 50000)
         })
         return false
     }
@@ -66,6 +72,7 @@ class Create extends PureComponent {
                     <MessageIcon />
                     Send SMS
                 </button>
+                <ReactNotify ref='notificator'/>
             </form>
         )
     }

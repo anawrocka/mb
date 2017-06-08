@@ -31,6 +31,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-icons": "^2.2.5",
+    "react-notify": "^3.0.0",
     "react-pure-render": "^1.0.2",
     "sass-loader": "^6.0.5",
     "socket.io": "^2.0.2",

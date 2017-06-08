@@ -285,3 +285,45 @@ textarea {
         }
     }
 }
+
+.notify-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+ 
+.notify-item {
+  width: 250px;
+  margin: 5px 10px;
+  color: $secondary-color;
+  border-radius: 5px;
+}
+ 
+.notify-item:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 1px 0 rgb(15, 15, 15);
+}
+ 
+.notify-item > p {
+  font-family: inherit;
+  margin: 10px;
+  opacity: .8;
+}
+ 
+.notify-item.success {
+  background-color: $brand-color;
+}
+ 
+.notify-item.error {
+  background-color: rgba(203, 100, 94, 0.8);
+}
+ 
+.notify-title {
+  font-weight: 700;
+}
